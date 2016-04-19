@@ -32,9 +32,10 @@
             this.labelAcc = new System.Windows.Forms.Label();
             this.login = new System.Windows.Forms.Label();
             this.mdp = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.logintext = new System.Windows.Forms.TextBox();
+            this.mdptext = new System.Windows.Forms.TextBox();
             this.valider = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelAcc
@@ -64,19 +65,19 @@
             this.mdp.TabIndex = 2;
             this.mdp.Text = "Mot De Passe";
             // 
-            // textBox1
+            // logintext
             // 
-            this.textBox1.Location = new System.Drawing.Point(151, 120);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(155, 20);
-            this.textBox1.TabIndex = 3;
+            this.logintext.Location = new System.Drawing.Point(151, 120);
+            this.logintext.Name = "logintext";
+            this.logintext.Size = new System.Drawing.Size(155, 20);
+            this.logintext.TabIndex = 3;
             // 
-            // textBox2
+            // mdptext
             // 
-            this.textBox2.Location = new System.Drawing.Point(151, 192);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(155, 20);
-            this.textBox2.TabIndex = 4;
+            this.mdptext.Location = new System.Drawing.Point(151, 192);
+            this.mdptext.Name = "mdptext";
+            this.mdptext.Size = new System.Drawing.Size(155, 20);
+            this.mdptext.TabIndex = 4;
             // 
             // valider
             // 
@@ -87,6 +88,17 @@
             this.valider.TabIndex = 5;
             this.valider.Text = "Connexion";
             this.valider.UseVisualStyleBackColor = false;
+            this.valider.Click += new System.EventHandler(this.valider_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(380, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(108, 28);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "nouveaux compte";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // formAcc
             // 
@@ -94,9 +106,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(500, 333);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.valider);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.mdptext);
+            this.Controls.Add(this.logintext);
             this.Controls.Add(this.mdp);
             this.Controls.Add(this.login);
             this.Controls.Add(this.labelAcc);
@@ -114,8 +127,9 @@
         private System.Windows.Forms.Label login;
         private System.Windows.Forms.Label mdp;
         private System.Windows.Forms.Button valider;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox mdptext;
+        private System.Windows.Forms.TextBox logintext;
+        private System.Windows.Forms.Button button1;
     }
 }
 

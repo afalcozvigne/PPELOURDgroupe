@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="GestionStock" Class="gestionstkDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SAPHIRA\SQLEXPRESS;Initial Catalog=GestionStock;Integrated Security=True" SettingsObjectName="Gestion_stock.Properties.Settings" SettingsPropertyName="GestionStockConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BonDeCommande" Member="BonDeCommande">
+    <Type Name="BonDeCommande">
+      <Column Name="id_boncmd" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_concerne" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_client" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="date_cmd" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="BonDeCommande_LivraisonW" Member="LivraisonW" ThisKey="id_boncmd" OtherKey="id_boncmd" Type="LivraisonW" />
+      <Association Name="Client_BonDeCommande" Member="Client" ThisKey="id_client" OtherKey="id_client" Type="Client" IsForeignKey="true" />
+      <Association Name="Concerne_BonDeCommande" Member="Concerne" ThisKey="id_concerne" OtherKey="id_concerne" Type="Concerne" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Client" Member="Client">
+    <Type Name="Client">
+      <Column Name="id_client" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nom_client" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="prenom_client" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="add_client" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="tel_client" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="mail_client" Type="System.Data.Linq.Binary" DbType="VarBinary(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="Client_BonDeCommande" Member="BonDeCommande" ThisKey="id_client" OtherKey="id_client" Type="BonDeCommande" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CommandeEnt" Member="CommandeEnt">
+    <Type Name="CommandeEnt">
+      <Column Name="id_cmde" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_date" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_concerne" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_fournisseur" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_utilisateur" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Concerne_CommandeEnt" Member="Concerne" ThisKey="id_concerne" OtherKey="id_concerne" Type="Concerne" IsForeignKey="true" />
+      <Association Name="Fournisseur_CommandeEnt" Member="Fournisseur" ThisKey="id_fournisseur" OtherKey="id_fournisseur" Type="Fournisseur" IsForeignKey="true" />
+      <Association Name="Date_CommandeEnt" Member="Date" ThisKey="id_date" OtherKey="id_date" Type="Date" IsForeignKey="true" />
+      <Association Name="Utilisateur_CommandeEnt" Member="Utilisateur" ThisKey="id_utilisateur" OtherKey="id_utilisateur" Type="Utilisateur" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Concerne" Member="Concerne">
+    <Type Name="Concerne">
+      <Column Name="id_concerne" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="qte_concerne" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_produits" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Concerne_BonDeCommande" Member="BonDeCommande" ThisKey="id_concerne" OtherKey="id_concerne" Type="BonDeCommande" />
+      <Association Name="Concerne_CommandeEnt" Member="CommandeEnt" ThisKey="id_concerne" OtherKey="id_concerne" Type="CommandeEnt" />
+      <Association Name="Produits_Concerne" Member="Produits" ThisKey="id_produits" OtherKey="id_produits" Type="Produits" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Fournisseur" Member="Fournisseur">
+    <Type Name="Fournisseur">
+      <Column Name="id_fournisseur" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="labelle_fournisseur" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="add_fournisseur" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="tel_fournisseur" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="mail_varchar" Type="System.Data.Linq.Binary" DbType="VarBinary(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="Fournisseur_CommandeEnt" Member="CommandeEnt" ThisKey="id_fournisseur" OtherKey="id_fournisseur" Type="CommandeEnt" />
+      <Association Name="Fournisseur_LivraisonF" Member="LivraisonF" ThisKey="id_fournisseur" OtherKey="id_fournisseur" Type="LivraisonF" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Date" Member="Date">
+    <Type Name="Date">
+      <Column Name="id_date" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="date" Member="date1" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="Date_CommandeEnt" Member="CommandeEnt" ThisKey="id_date" OtherKey="id_date" Type="CommandeEnt" />
+      <Association Name="Date_LivraisonF" Member="LivraisonF" ThisKey="id_date" OtherKey="id_date" Type="LivraisonF" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LivraisonF" Member="LivraisonF">
+    <Type Name="LivraisonF">
+      <Column Name="id_livraison" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_date" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_produits" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_fournisseur" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="prixvente_fournisseur" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="Date_LivraisonF" Member="Date" ThisKey="id_date" OtherKey="id_date" Type="Date" IsForeignKey="true" />
+      <Association Name="Fournisseur_LivraisonF" Member="Fournisseur" ThisKey="id_fournisseur" OtherKey="id_fournisseur" Type="Fournisseur" IsForeignKey="true" />
+      <Association Name="Produits_LivraisonF" Member="Produits" ThisKey="id_produits" OtherKey="id_produits" Type="Produits" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LivraisonW" Member="LivraisonW">
+    <Type Name="LivraisonW">
+      <Column Name="id_livraisonW" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="date_livraisonW" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="id_boncmd" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_produits" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="BonDeCommande_LivraisonW" Member="BonDeCommande" ThisKey="id_boncmd" OtherKey="id_boncmd" Type="BonDeCommande" IsForeignKey="true" />
+      <Association Name="Produits_LivraisonW" Member="Produits" ThisKey="id_produits" OtherKey="id_produits" Type="Produits" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Produits" Member="Produits">
+    <Type Name="Produits">
+      <Column Name="id_produits" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="labelle_produits" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="qtestock_produits" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="prixvente_produits" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="description_produits" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="famille_produits" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Produits_Concerne" Member="Concerne" ThisKey="id_produits" OtherKey="id_produits" Type="Concerne" />
+      <Association Name="Produits_LivraisonF" Member="LivraisonF" ThisKey="id_produits" OtherKey="id_produits" Type="LivraisonF" />
+      <Association Name="Produits_LivraisonW" Member="LivraisonW" ThisKey="id_produits" OtherKey="id_produits" Type="LivraisonW" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Staffs" Member="Staffs">
+    <Type Name="Staffs">
+      <Column Name="id_staff" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nom_staff" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="prenom_staff" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="add_staff" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="tel_staff" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="libelleposte_staff" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="mail_staff" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Staffs_Utilisateur" Member="Utilisateur" ThisKey="id_staff" OtherKey="id_staff" Type="Utilisateur" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Utilisateur" Member="Utilisateur">
+    <Type Name="Utilisateur">
+      <Column Name="id_utilisateur" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_staff" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="mdp_utilisateur" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="users_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Utilisateur_CommandeEnt" Member="CommandeEnt" ThisKey="id_utilisateur" OtherKey="id_utilisateur" Type="CommandeEnt" />
+      <Association Name="Staffs_Utilisateur" Member="Staffs" ThisKey="id_staff" OtherKey="id_staff" Type="Staffs" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace Gestion_stock
 {
-    public partial class Acceuil : Form
+    public partial class NvxEmploye : Form
     {
-        public Acceuil()
+        public NvxEmploye()
         {
             InitializeComponent();
-        }
-
-        private void gestion_Click(object sender, EventArgs e)
-        {
-            stock stck = new stock();
-            stck.Show();
         }
     }
 }

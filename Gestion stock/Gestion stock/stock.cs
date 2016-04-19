@@ -15,6 +15,27 @@ namespace Gestion_stock
         public stock()
         {
             InitializeComponent();
+            gestionstkDataContext bdcon = new gestionstkDataContext();
+            
+
+        }
+
+        private void stock_Load(object sender, EventArgs e)
+        {
+            // TODO: cette ligne de code charge les données dans la table 'gestionStockDataSet.Produits'. Vous pouvez la déplacer ou la supprimer selon vos besoins.
+            this.produitsTableAdapter.Fill(this.gestionStockDataSet.Produits);
+
+        }
+
+        private void Addproduct_Click(object sender, EventArgs e)
+        {
+            newproduct addproduct = new newproduct();
+            addproduct.Show();
+        }
+
+        private void buttonretoure_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

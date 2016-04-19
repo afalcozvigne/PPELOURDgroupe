@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,6 +58,28 @@
     </Compile>
     <Compile Include="Acceuil.Designer.cs">
       <DependentUpon>Acceuil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gestionstk.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gestionstk.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="GestionStockDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GestionStockDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="newproduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="newproduct.Designer.cs">
+      <DependentUpon>newproduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NvxEmploye.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NvxEmploye.Designer.cs">
+      <DependentUpon>NvxEmploye.cs</DependentUpon>
     </Compile>
     <Compile Include="personnalisation.cs">
       <SubType>Form</SubType>
@@ -84,6 +107,15 @@
     <EmbeddedResource Include="connexion.resx">
       <DependentUpon>connexion.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="gestionstk.dbml.layout">
+      <DependentUpon>gestionstk.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="newproduct.resx">
+      <DependentUpon>newproduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NvxEmploye.resx">
+      <DependentUpon>NvxEmploye.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="personnalisation.resx">
       <DependentUpon>personnalisation.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,6 +134,22 @@
     <EmbeddedResource Include="stock.resx">
       <DependentUpon>stock.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="gestionstk.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>gestionstk.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GestionStockDataSet.xsc">
+      <DependentUpon>GestionStockDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GestionStockDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GestionStockDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GestionStockDataSet.xss">
+      <DependentUpon>GestionStockDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -114,6 +162,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

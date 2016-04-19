@@ -34,8 +34,6 @@
             this.gestion = new System.Windows.Forms.Button();
             this.ListePerso = new System.Windows.Forms.Button();
             this.WavAttittude = new System.Windows.Forms.Label();
-            this.compte = new System.Windows.Forms.Label();
-            this.connexionLabel = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +64,7 @@
             this.gestion.TabIndex = 2;
             this.gestion.Text = "Gestion de stock";
             this.gestion.UseVisualStyleBackColor = true;
+            this.gestion.Click += new System.EventHandler(this.gestion_Click);
             // 
             // ListePerso
             // 
@@ -89,25 +88,6 @@
             this.WavAttittude.TabIndex = 4;
             this.WavAttittude.Text = "Bienvenue sur WavAttitude";
             // 
-            // compte
-            // 
-            this.compte.AutoSize = true;
-            this.compte.Location = new System.Drawing.Point(324, 153);
-            this.compte.Name = "compte";
-            this.compte.Size = new System.Drawing.Size(93, 13);
-            this.compte.TabIndex = 5;
-            this.compte.Text = "compte connecter";
-            // 
-            // connexionLabel
-            // 
-            this.connexionLabel.AutoSize = true;
-            this.connexionLabel.Location = new System.Drawing.Point(441, 153);
-            this.connexionLabel.Name = "connexionLabel";
-            this.connexionLabel.Size = new System.Drawing.Size(56, 13);
-            this.connexionLabel.TabIndex = 6;
-            this.connexionLabel.TabStop = true;
-            this.connexionLabel.Text = "connexion";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
@@ -124,8 +104,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(496, 509);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.connexionLabel);
-            this.Controls.Add(this.compte);
             this.Controls.Add(this.WavAttittude);
             this.Controls.Add(this.ListePerso);
             this.Controls.Add(this.gestion);
@@ -133,7 +111,7 @@
             this.Controls.Add(this.Personalisation);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Acceuil";
-            this.Text = "Acceuil";
+            this.Text = " ";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -147,8 +125,6 @@
         private System.Windows.Forms.Button gestion;
         private System.Windows.Forms.Button ListePerso;
         private System.Windows.Forms.Label WavAttittude;
-        private System.Windows.Forms.Label compte;
-        private System.Windows.Forms.LinkLabel connexionLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
