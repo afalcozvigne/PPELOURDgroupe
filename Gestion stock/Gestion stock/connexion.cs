@@ -18,7 +18,7 @@ namespace Gestion_stock
             InitializeComponent();
         }
         //chaine de connection
-        string cs = @"Data Source=ALEXANDRE-PC;Initial Catalog=waveattitudeBDD;Integrated Security=True";
+        string cs = @"Data Source=ALEXANDRE-PC;Initial Catalog=GestionStock;Integrated Security=True";
         
         //button valider
         private void valider_Click(object sender, EventArgs e)

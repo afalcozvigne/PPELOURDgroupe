@@ -39,8 +39,6 @@
             this.descriptionproduitsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.familleproduitsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.produitsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gestionStockDataSet = new Gestion_stock.GestionStockDataSet();
-            this.produitsTableAdapter = new Gestion_stock.GestionStockDataSetTableAdapters.ProduitsTableAdapter();
             this.Addproduct = new System.Windows.Forms.Button();
             this.CmdEnt = new System.Windows.Forms.Button();
             this.Vente = new System.Windows.Forms.Button();
@@ -195,9 +193,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private GestionStockDataSet gestionStockDataSet;
         private System.Windows.Forms.BindingSource produitsBindingSource;
-        private GestionStockDataSetTableAdapters.ProduitsTableAdapter produitsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idproduitsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn labelleproduitsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn qtestockproduitsDataGridViewTextBoxColumn;

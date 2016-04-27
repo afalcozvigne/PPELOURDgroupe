@@ -29,9 +29,6 @@ namespace Gestion_stock
             }
 
             //création de la connexion sql
-
-            //SqlConnection con = new SqlConnection(cs);
-            gestionstkDataContext db = new gestionstkDataContext();
                 
                 using (SqlConnection maConnexion = new SqlConnection(@"Data Source=SAPHIRA\SQLEXPRESS;Initial Catalog=GestionStock;Integrated Security=True")
                     )

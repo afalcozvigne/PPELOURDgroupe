@@ -45,7 +45,7 @@
             this.labelAcc.Name = "labelAcc";
             this.labelAcc.Size = new System.Drawing.Size(52, 13);
             this.labelAcc.TabIndex = 0;
-            this.labelAcc.Text = "ACCEUIL";
+            this.labelAcc.Text = "ACCUEIL";
             // 
             // login
             // 
@@ -71,6 +71,7 @@
             this.logintext.Name = "logintext";
             this.logintext.Size = new System.Drawing.Size(155, 20);
             this.logintext.TabIndex = 3;
+            this.logintext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.logintext_KeyPress);
             // 
             // mdptext
             // 
@@ -78,6 +79,8 @@
             this.mdptext.Name = "mdptext";
             this.mdptext.Size = new System.Drawing.Size(155, 20);
             this.mdptext.TabIndex = 4;
+            this.mdptext.UseSystemPasswordChar = true;
+            this.mdptext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mdptext_KeyPress);
             // 
             // valider
             // 
