@@ -19,8 +19,9 @@ namespace Gestion_stock
 
         private void gestion_Click(object sender, EventArgs e)
         {
-            stock stck = new stock();
-            stck.Show();
+            stock stock = new stock();
+            stock.Show();
+            this.Hide();
         }
     }
 }

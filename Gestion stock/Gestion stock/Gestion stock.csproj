@@ -87,6 +87,7 @@
     <Compile Include="Personnel.Designer.cs">
       <DependentUpon>Personnel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produits.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="stock.cs">
@@ -100,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="connexion.resx">
       <DependentUpon>connexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="stock.resx">
+      <DependentUpon>stock.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
@@ -133,9 +137,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="stock.resx">
-      <DependentUpon>stock.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="GESTIONLINQ.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>GESTIONLINQ.designer.cs</LastGenOutput>

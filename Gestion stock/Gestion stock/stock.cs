@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Gestion_stock
@@ -16,16 +15,15 @@ namespace Gestion_stock
         public stock()
         {
             InitializeComponent();
-        
         }
-
-
         private GESTIONLINQDataContext dc = new GESTIONLINQDataContext();
+
+
         private void stock_Load(object sender, EventArgs e)
         {
             var lesProduits = (from prod in dc.Produits select prod).ToList();
             foreach (var prod in lesProduits)
-                listeproduitbox.Items.Add(prod);
+                listBox1.Items.Add(prod);
 
         }
 
@@ -65,7 +63,7 @@ namespace Gestion_stock
 
         private void delt_Click(object sender, EventArgs e)
         {
-            Produits leProduit = listeproduitbox.SelectedItem as Produits;
+            Produits leProduit = listBox1.SelectedItem as Produits;
             var aSup = (from prod in dc.Produits
                         where prod.id_produits == leProduit.id_produits
                         select prod);
@@ -86,7 +84,7 @@ namespace Gestion_stock
 
         private void modifier_Click(object sender, EventArgs e)
         {
-            Produits leProduitSel = listeproduitbox.SelectedItem as Produits;
+            Produits leProduitSel = listBox1.SelectedItem as Produits;
             var aMod = (from prod in dc.Produits
                         where prod.id_produits == leProduitSel.id_produits
                         select prod);
@@ -99,11 +97,7 @@ namespace Gestion_stock
                 textBox5.Text = prod.famille_produits;
             }
         }
-
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            
-
-        }
     }
 }
+
+
