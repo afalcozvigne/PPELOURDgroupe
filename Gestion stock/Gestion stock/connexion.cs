@@ -16,16 +16,17 @@ namespace Gestion_stock
         public formAcc()
         {
             InitializeComponent();
+            mdptext.PasswordChar = '*';
         }
         //chaine de connection
-        string cs = @"Data Source=ALEXANDRE-PC;Initial Catalog=GestionStock;Integrated Security=True";
+        string cs = @"Data Source=SAPHIRA\SQLEXPRESS;Initial Catalog=GestionStock;Integrated Security=True";
         
         //button valider
         private void valider_Click(object sender, EventArgs e)
         {
-            if (logintext.Text=="" || mdptext.Text == "" )
+            if (logintext.Text=="" || mdptext.Text == "")
             {
-                MessageBox.Show("entrez les données demander");
+                MessageBox.Show("entre les données demander");
                 return;
             }
             try
@@ -77,7 +78,7 @@ namespace Gestion_stock
         private void mdptext_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)13)
-               valider.PerformClick();
+                valider.PerformClick();
         }
     }
 }

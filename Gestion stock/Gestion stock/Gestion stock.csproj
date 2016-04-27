@@ -59,21 +59,15 @@
     <Compile Include="Acceuil.Designer.cs">
       <DependentUpon>Acceuil.cs</DependentUpon>
     </Compile>
-    <Compile Include="gestionstk.designer.cs">
+    <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>gestionstk.dbml</DependentUpon>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="GestionStockDataSet.Designer.cs">
+    <Compile Include="GESTIONLINQ.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GestionStockDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="newproduct.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="newproduct.Designer.cs">
-      <DependentUpon>newproduct.cs</DependentUpon>
+      <DependentUpon>GESTIONLINQ.dbml</DependentUpon>
     </Compile>
     <Compile Include="NvxEmploye.cs">
       <SubType>Form</SubType>
@@ -107,12 +101,20 @@
     <EmbeddedResource Include="connexion.resx">
       <DependentUpon>connexion.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="gestionstk.dbml.layout">
-      <DependentUpon>gestionstk.dbml</DependentUpon>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
-    <EmbeddedResource Include="newproduct.resx">
-      <DependentUpon>newproduct.cs</DependentUpon>
-    </EmbeddedResource>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="GESTIONLINQ.dbml.layout">
+      <DependentUpon>GESTIONLINQ.dbml</DependentUpon>
+    </None>
     <EmbeddedResource Include="NvxEmploye.resx">
       <DependentUpon>NvxEmploye.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,21 +136,10 @@
     <EmbeddedResource Include="stock.resx">
       <DependentUpon>stock.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="gestionstk.dbml">
+    <None Include="GESTIONLINQ.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>gestionstk.designer.cs</LastGenOutput>
+      <LastGenOutput>GESTIONLINQ.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
-    </None>
-    <None Include="GestionStockDataSet.xsc">
-      <DependentUpon>GestionStockDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="GestionStockDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GestionStockDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="GestionStockDataSet.xss">
-      <DependentUpon>GestionStockDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
