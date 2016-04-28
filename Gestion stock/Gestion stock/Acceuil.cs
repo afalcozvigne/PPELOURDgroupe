@@ -23,5 +23,12 @@ namespace Gestion_stock
             stock.Show();
             this.Hide();
         }
+
+        private void ListePerso_Click(object sender, EventArgs e)
+        {
+            GestionEmployer gestionemployer = new GestionEmployer();
+            gestionemployer.Show();
+            this.Hide();
+        }
     }
 }

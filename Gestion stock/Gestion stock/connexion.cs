@@ -16,10 +16,9 @@ namespace Gestion_stock
         public formAcc()
         {
             InitializeComponent();
-            mdptext.PasswordChar = '*';
         }
         //chaine de connection
-        string cs = @"Data Source=SAPHIRA\SQLEXPRESS;Initial Catalog=GestionStock;Integrated Security=True";
+        string cs = @"Data Source=ALEXANDRE-PC;Initial Catalog=GestionStock;Integrated Security=True";
         
         //button valider
         private void valider_Click(object sender, EventArgs e)
@@ -34,7 +33,7 @@ namespace Gestion_stock
                 //création de la connexion sql
 
                 SqlConnection con = new SqlConnection(cs);
-                SqlCommand cmd = new SqlCommand("Select * from Utilisateur where users_name=@login and mdp_utilisateur=@mdp", con);
+                SqlCommand cmd = new SqlCommand("Select * from users where name_utilisateur=@login and mdp_utilisateur=@mdp", con);
                 cmd.Parameters.AddWithValue("@login", logintext.Text);
                 cmd.Parameters.AddWithValue("@mdp", mdptext.Text);
                 con.Open();
